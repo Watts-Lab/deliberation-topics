@@ -1,4 +1,4 @@
-# Example
+# Example Topic
 
 This topic is an example topic meant for use in developing and testing the deliberation experiment infrastructure. 
 The question is facetious - we were always going to use markdown.
