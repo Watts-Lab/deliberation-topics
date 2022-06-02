@@ -9,7 +9,7 @@ It will be interesting to see how the personal aspect of a face-to-face delibera
 This question was chosen because of its strong ties to political party affiliation (0.5 correlation) and its particularly high normalized variance (0.69).
 The results from our deliberation on this topic can tell us a fair bit about the plasuability of our treatments given a controversial and polarizing topic.
 The most polarizing topic from our data was how to deal with urban unrest--but we anticipate that this topic was only so high at the time because this survey was administered at the height of the Black Lives Matter protests in 2020.
-This topic is a safer bet for a controversial topic that likely has not changed unpredictably in the last two years. 
+This income topic is a safer bet for a controversial topic that likely has not changed unpredictably in the last two years. 
 
 ### Sources
 This issue was sourced from the 2020 ANES questionaire:  
