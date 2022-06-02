@@ -2,7 +2,7 @@
 
 This question probes deliberators to consider whether or not (and how much) our government should work to reduce income inequality.
 Economic issues like these touch at the root of almost everyone's lives (as opposed to something like gun control which may not be a problem in everyone's day to day).
-It will be interesting to see how the personal aspect of a face-to-face deliberation will depolarize our group through sharing perspectives on income ineuqality and that role that government should play in mediating financial equality. 
+It will be interesting to see how the personal aspect of a face-to-face deliberation will depolarize our group through sharing perspectives on income ineuqality and that role that government should play in mediating income equality. 
 
 ### Background Information
 
