@@ -1,4 +1,4 @@
-# Government Reducing Income Inequality
+# Government reducing income inequality
 
 ### Type
 Economic
