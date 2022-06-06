@@ -11,4 +11,4 @@ course, other people have opinions in between.
 - Where would you place yourself on this scale, or haven’t you thought much about this?
 
 #### Source
-###### *Refer to variable "V202621" on pages 182-183 of the ANES 2020 questionnaire*
+###### *Refer to variable "V201429" on pages 182-183 of the ANES 2020 questionnaire*
