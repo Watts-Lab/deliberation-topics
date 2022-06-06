@@ -1,4 +1,4 @@
-# Government Assistance to Black People
+# Government assistance to black people
 
 ### Type
 Economic
