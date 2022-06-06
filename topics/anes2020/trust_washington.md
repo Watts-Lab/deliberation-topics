@@ -7,4 +7,4 @@ Nonpartisan
 How often can you trust the federal government in Washington to do what is right?
 
 #### Source
-###### *Refer to variable "V______" on page(s) ______ of the ANES 2020 questionnaire*
+###### *Refer to variable "V201233" on page 116 of the ANES 2020 questionnaire*
