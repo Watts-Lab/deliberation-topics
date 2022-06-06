@@ -1,7 +1,7 @@
 # [Topic Name]
 
-### Background Information:
-[Can leave blank as of now. Will require research on how to best offer background information to the participatns. An intervention we might test is whether or not to even inform our participants before posing a question.]
+### Type
+[e.g., Economy]
 
 ## Prompt
 - Should the government subsidize GitHub accounts for all Americans?
