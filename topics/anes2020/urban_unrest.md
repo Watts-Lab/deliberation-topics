@@ -1,4 +1,4 @@
-# Dealing with Urban Unrest
+# Dealing with urban unrest
 
 ### Type
 Security
