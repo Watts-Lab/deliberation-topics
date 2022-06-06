@@ -1,4 +1,4 @@
-# HOW OFTEN CAN PEOPLE BE TRUSTED
+# How Often Can People Be Trusted
 
 ### Type
 Nonpartisan
