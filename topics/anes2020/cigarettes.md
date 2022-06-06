@@ -1,4 +1,4 @@
-# CURRENTLY SMOKING
+# Currently Smoking
 
 ### Type
 Nonpartisan
