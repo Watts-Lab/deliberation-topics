@@ -14,4 +14,4 @@ between, at points 2, 3, 4, 5, or 6.
 - Where would you place yourself on this scale, or haven’t you thought much about this?
 
 #### Source
-###### *Refer to variable "V201255" on page(s) 127-128 of the ANES 2020 questionnaire*
+###### *Refer to variable "V201255" on pages 127-128 of the ANES 2020 questionnaire*
