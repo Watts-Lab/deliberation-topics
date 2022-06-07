@@ -1,12 +1,10 @@
-# [Topic Name]
+# Social Security
 
 ### Type
-[e.g., Economic]
+Economic
 
 ## Prompt
-This is background information that will be fed to our participants. Blah blah blah? Blah blah blah. Text text text text text; text. Text, text text text text text text, blah blah blah.
-
-- Should the government subsidize GitHub accounts for all Americans?
+Should federal spending on Social Security be increased, decreased, or kept the same?
 
 #### Source
 ###### *Refer to variable "V______" on page(s) ______ of the ANES 2020 questionnaire*
