@@ -6,7 +6,8 @@ Each issue is assigned a "type," similar to how Baldassarri and Gelman categoriz
 
 As can be seen in this repositority's map, the data were measured and plotted along two dimensions: variance and partisanship. The goal of this mapping is to determine how different sorts of interventions will work when dicussing different types of issue (e.g., informing participants will lower affective polarization *only* when dealing with issues of low partisanship). 
 
-Because many of the survey questions are phrased in particular ways, we will try to copy the prompts verbatim and include them in this folder for manipulation when need-be. In cases where the first question is different than the summary variable (ending in "x"), we will replace the "do you favor, oppose, or neither favor nor oppose" wording with "On a scale from 1-7, how strongly would you agree that ___ should ____" 
+Because many of the survey questions are phrased in particular ways, we will try to copy the prompts verbatim and include them in this folder for manipulation when need-be. In cases where the first question is different than the summary variable (ending in "x"), we will sometimes replace the "do you favor, oppose, or neither favor nor oppose" wording with "On a scale from 1-7, how strongly would you agree that ___ should ____". Depending on the case, we also may just include the wording "favor, oppose, or neither" because it is likely that in a discussion setting, the nuances of the strength of people's opinions will come out naturally. In any event, deciding how to phrase these questions is something we can decide before we run our experiments.
+
 
 
 ### Sources
