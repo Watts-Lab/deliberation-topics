@@ -1,4 +1,4 @@
-# Federal Spending on the Environment
+# Federal spending on the environment
 
 ## Prompt
 What about protecting the environment? Should federal
