@@ -1,4 +1,4 @@
-# Government spending on services
+# Government providing services
 
 ## Prompt
 Some people think the government should provide fewer services
