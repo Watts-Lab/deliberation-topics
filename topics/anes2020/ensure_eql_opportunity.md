@@ -1,4 +1,4 @@
-# Making sure eeveryone has equal opportunity
+# Ensuring equal opportunity
 
 ## Prompt
 "Our society should do whatever is necessary to make sure that everyone has an equal opportunity to succeed."
