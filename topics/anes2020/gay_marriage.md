@@ -1,7 +1,4 @@
-# Position On Gay Marriage
-
-### Type
-Moral
+# Position on gay marriage
 
 ## Prompt
 Which comes closest to your view?
@@ -11,7 +8,3 @@ Which comes closest to your view?
 unions but not legally marry
 - There should be no legal recognition of gay or lesbian
 couples’ relationship
-
-
-#### Source
-###### *Refer to variable "V201416" on page 177 of the ANES 2020 questionnaire*
