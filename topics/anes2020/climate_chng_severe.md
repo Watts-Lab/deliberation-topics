@@ -1,4 +1,4 @@
-# Climate Change Affecting Severe Weather
+# Climate change affecting severe weather
 
 ## Prompt
 How much, if at all, do you think climate change is currently
