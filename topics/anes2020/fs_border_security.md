@@ -1,4 +1,4 @@
-# Federal Spending on Border Security
+# Federal spending on border security
 
 ## Prompt
 What about tightening border security to prevent illegal
