@@ -24,13 +24,3 @@ jobs:
     - name: Spell check
        run: |
          python -m pyspelling
-  build:
-    name: Spellcheck
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: rojopolis/spellcheck-github-actions@0.24.0
-        name: Spellcheck
-        with:
-          source_files: topics/examples/example.md
-          task_name: Markdown
