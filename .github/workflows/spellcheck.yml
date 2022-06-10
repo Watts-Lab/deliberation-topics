@@ -11,4 +11,5 @@ jobs:
         name: Spellcheck
         with:
           config_path: .github/spellcheck-config.yml
+          source_files: topics
           task_name: Markdown
