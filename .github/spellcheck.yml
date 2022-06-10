@@ -1,2 +1,7 @@
+name: Spellcheck
+
+on: push
+
+
 - name: GitHub Spellcheck Action
   uses: rojopolis/spellcheck-github-actions@0.24.0
