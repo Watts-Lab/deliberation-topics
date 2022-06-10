@@ -1,2 +1,7 @@
-- name: GitHub Spellcheck Action
-  uses: rojopolis/spellcheck-github-actions@0.24.0
+matrix:
+  - name: Python Source
+    aspell:
+      lang: en
+      d: en_US
+    sources:
+      - pyspelling/**/*.py
