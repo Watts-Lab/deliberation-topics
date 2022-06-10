@@ -1,12 +1,2 @@
-name: Spellcheck Action
-on: push
-
-jobs:
-  build:
-    name: Spellcheck
-    runs-on: ubuntu-latest
-    steps:
-      # The checkout step
-      - uses: actions/checkout@main
-      - uses: rojopolis/spellcheck-github-actions@0.24.0
-        name: Spellcheck
+- name: GitHub Spellcheck Action
+  uses: rojopolis/spellcheck-github-actions@0.24.0
