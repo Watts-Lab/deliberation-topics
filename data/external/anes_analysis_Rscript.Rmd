@@ -124,7 +124,7 @@ anes <- anes %>%
 security.var <- c("v201249", "v201429", "v201432x", "v201311x", "v202310", "v202232", 
                   "v202236x", "v202239x", "v202242x", "v202248x", "v202344x", "v202341x",
                   "v202351", "v202332")
-security.names <- c("defense.spending", "urban.unrest", "protestors.actions", 
+security.names <- c("defense.spending", "urban.unrest", "protesters.actions", 
                     "fs.crime", "science.for.covid", "immigration.levels",
                     "taking.refugees", "immigration.crime", "path.to.citizenship",
                     "seperating.children", "ban.assault.rifles", "gun.background.checks",
@@ -134,7 +134,7 @@ security.source <- c("paper", "paper", "new", "paper", "new", "new", "new", "new
 anes <- anes %>%
   rename("defense.spending" = "v201249",
          "urban.unrest" = "v201429",
-         "protestors.actions" = "v201432x",
+         "protesters.actions" = "v201432x",
          "fs.crime" = "v201311x",
          "science.for.covid" = "v202310",
          "immigration.levels" = "v202232",
