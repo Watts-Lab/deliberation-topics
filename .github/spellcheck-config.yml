@@ -15,6 +15,7 @@ matrix:
           comments: false
           ignores:
             - code
+            - html
             - pre
             - a
     sources:
