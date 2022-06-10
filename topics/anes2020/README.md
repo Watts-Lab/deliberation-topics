@@ -12,7 +12,7 @@ Because many of the survey questions are phrased in particular ways, we will try
 
 ### Sources
 These issues and their associated background information were sourced from the 2020 ANES questionnaire:  
-https://electionstudies.org/wp-content/uploads/2022/02/anes_timeseries_2020_userguidecodebook_20220210.pdf  
+<html>https://electionstudies.org/wp-content/uploads/2022/02/anes_timeseries_2020_userguidecodebook_20220210.pdf<html>  
 
 
 ### Revision History
