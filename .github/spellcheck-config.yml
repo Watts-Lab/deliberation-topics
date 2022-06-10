@@ -4,6 +4,8 @@ matrix:
       lang: en
       ignore-case: true
     dictionary:
+      wordlists:
+        - .github/wordlist.txt
       encoding: utf-8
     pipeline:
       - pyspelling.filters.markdown:
