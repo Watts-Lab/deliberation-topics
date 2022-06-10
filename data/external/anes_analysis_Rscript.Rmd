@@ -1,0 +1,314 @@
+---
+title: "GSS Variable Variance Analysis"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# Setting document up to be knitted
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, message = FALSE, warning = F}
+# Sets working directory
+setwd("~/Downloads/PSCI207/data/PURM/anes_timeseries_2020_csv_20220210/")
+# Loads libraries
+require(rio)
+require(tidyverse)
+require(pander)
+require(weights)
+require(ggrepel)
+require(ggthemes)
+require(stringr)
+```
+
+
+```{r, message=FALSE}
+# Imports data 
+anes <- import("anes_timeseries_2020_csv_20220210.csv")
+# Makes names lowercase 
+names(anes) <- tolower(names(anes))
+```
+
+
+```{r}
+# Recodes variable name
+anes <- rename(anes, partyid = v201231x)
+
+# Makes a vector of the names of the variables we're interested in.
+economic.var <- c("v201302x", "v201305x", "v201308x", "v201314x", "v201317x",
+                  "v201320x", "v201323x", "v201255", "v202380x", "v201258", "v202259x",
+                  "v202233", "v201246", "v202321", "v202336x")
+# Makes a vector of the names we'll be using to represent these variables.
+economic.names <- c("fs.social.security", "fs.public.schools", "fs.border.security", 
+                    "fs.welfare", "fs.highways", "fs.aid.poor", "fs.environment", "gov.guarantees.job",
+                    "fs.health.care", "gov.assistance.blacks", "gov.reduce.income.inequality",
+                    "immigration.take.jobs", "gov.services", "reducing.deficit", "regulate.greenhouse")
+# This vector tells us whether each issue is used in the Baldassarri/Gelman paper or if we added it as
+# a new variable. 
+economic.source <- c("paper", "paper", "new", "paper", "new", "paper", "paper", "paper", "new", 
+                     "paper", "new", "new", "paper", "new", "new")
+# Recodes variables to more digestible names.
+anes <- anes %>%
+  rename("fs.social.security" = "v201302x",
+         "fs.public.schools" = "v201305x", 
+         "fs.border.security" = "v201308x",
+         "fs.welfare" = "v201314x", 
+         "fs.highways" = "v201317x",
+         "fs.aid.poor" = "v201320x",
+         "fs.environment" = "v201323x",
+         "gov.guarantees.job" = "v201255",
+         "fs.health.care" = "v202380x",
+         "gov.assistance.blacks" = "v201258", 
+         "gov.reduce.income.inequality" = "v202259x",
+         "immigration.take.jobs" = "v202233",
+         "gov.services" = "v201246",
+         "reducing.deficit" = "v202321",
+         "regulate.greenhouse" = "v202336x")
+
+
+
+### Repeat this process for all the different types of issues we're interested in. 
+
+
+civil.rights.var <- c("v202260", "v202261", "v202262", "v202263", "v202300", "v202301", "v202302",
+                      "v202303", "v202252x")
+civil.rights.names <- c("ensure.eql.opportunity", "worry.less.abt.eqlty", "prblm.if.better.chances",
+                        "better.if.treated.fairly", "blks.wrk.way.up", "slavery.still.affects",
+                        "blks.get.less.than.deserve", "blks.try.harder", "pref.hiring.blks")
+civil.rights.source <- c("paper", "paper", "paper", "paper", "paper", "paper", "paper", "paper",
+                         "paper")
+
+anes <- anes %>%
+  rename("ensure.eql.opportunity" = "v202260",
+         "worry.less.abt.eqlty" = "v202261",
+         "prblm.if.better.chances" = "v202262",
+         "better.if.treated.fairly" = "v202263",
+         "blks.wrk.way.up" = "v202300", 
+         "slavery.still.affects" = "v202301",
+         "blks.get.less.than.deserve" = "v202302", 
+         "blks.try.harder" = "v202303",
+         "pref.hiring.blks" = "v202252x")
+
+
+# 5 represents an unsure answer for abortion, so we're turning it into an NA. 
+anes$v201336[anes$v201336 == 5] <- NA
+
+moral.var <- c("v202264", "v202265", "v201415", "v201414x", "v202390x", "v201336", "v202290x",
+               "v202291", "v201345x", "v201416", "v202350x", "v202373x", "v202476", "v202333")
+moral.names <- c("should.adjust.morals", "traditional.fam.values", "gays.adopting", 
+                 "laws.to.protect.gays", "trans.in.military", "abortion", "men.work.women.home",
+                 "women.equality.favors", "death.penalty", "gay.marriage", "opioid.crisis", "diversity",
+                 "being.feminist", "climate.chng.importance")
+moral.source <- c("paper", "paper", "paper", "paper", "new", "paper", "paper", "new", "new", 
+                  "new", "new", "new", "new", "new")
+anes <- anes %>%
+  rename("should.adjust.morals" = "v202264",
+         "traditional.fam.values" = "v202265",
+         "gays.adopting" = "v201415",
+         "laws.to.protect.gays" = "v201414x",
+         "trans.in.military" = "v202390x",
+         "abortion" = "v201336",
+         "men.work.women.home" = "v202290x",
+         "women.equality.favors" = "v202291",
+         "death.penalty" = "v201345x",
+         "gay.marriage" = "v201416",
+         "opioid.crisis" = "v202350x",
+         "diversity" = "v202373x",
+         "being.feminist" = "v202476",
+         "climate.chng.importance" = "v202333")
+
+
+# (Choosing not to pick many questions relating to specific countries or COVID because things
+# have changed a lot since 2020.)
+security.var <- c("v201249", "v201429", "v201432x", "v201311x", "v202310", "v202232", 
+                  "v202236x", "v202239x", "v202242x", "v202248x", "v202344x", "v202341x",
+                  "v202351", "v202332")
+security.names <- c("defense.spending", "urban.unrest", "protestors.actions", 
+                    "fs.crime", "science.for.covid", "immigration.levels",
+                    "taking.refugees", "immigration.crime", "path.to.citizenship",
+                    "seperating.children", "ban.assault.rifles", "gun.background.checks",
+                    "excessive.police.force", "climate.chng.severe")
+security.source <- c("paper", "paper", "new", "paper", "new", "new", "new", "new", "new",
+                     "new", "new", "new", "new", "new")
+anes <- anes %>%
+  rename("defense.spending" = "v201249",
+         "urban.unrest" = "v201429",
+         "protestors.actions" = "v201432x",
+         "fs.crime" = "v201311x",
+         "science.for.covid" = "v202310",
+         "immigration.levels" = "v202232",
+         "taking.refugees" = "v202236x",
+         "immigration.crime" = "v202239x",
+         "path.to.citizenship" = "v202242x",
+         "seperating.children" = "v202248x",
+         "ban.assault.rifles" = "v202344x",
+         "gun.background.checks" = "v202341x",
+         "excessive.police.force" = "v202351",
+         "climate.chng.severe" = "v202332")
+
+
+# These nonpartisan issues are ones we expect to have little correlation to party ID.
+# Unofrtunately, they are not very normative so we probably cannot use them as discussion topics.
+nonpartisan.var <- c("v201237", "v201233", "v202470", "v202542")
+nonpartisan.names <- c("trust.people", "trust.washington", "cigarettes", "facebook")
+nonpartisan.source <- c("new", "new", "new", "new")
+
+anes <- anes %>%
+  rename("trust.people" = "v201237",
+         "trust.washington" = "v201233",
+         "cigarettes" = "v202470",
+         "facebook" = "v202542")
+
+```
+
+
+\newpage
+```{r, message = F, warning = F}
+
+# Creates new function to break down correlation and variance for each type of issue. 
+
+party_cor <- function(x, y, z){
+  anes1 <- anes[! anes$partyid %in% c(-9, -8), ]
+  
+  df <- as.data.frame(matrix(NA, length(x), 4))
+  for(i in 1:nrow(df)){
+    variable <- x[i]
+    anes1[, variable][anes1[, variable] < 1 | anes1[, variable] == 99] <- NA
+    variance <- wtd.var(anes1[, variable], weight = anes1$v200010a)[1] 
+    cor <- abs(wtd.cor(anes1[, variable], anes1$partyid, weight = anes1$v200010a))
+    point.scale <- max(anes1[, variable], na.rm = T)
+    original.var <- z[i]
+    
+    df[i, 1] <- variable
+    df[i, 2] <- original.var
+    df[i, 3] <- cor
+    df[i, 4] <- variance / point.scale
+  }
+  df <- df[order(df[, 2], decreasing = T), ]
+  rownames(df) <- NULL
+  colnames(df) <- c(y, "ANES_Variable", "Cor_to_Party_ID", "Normalized_Variance")
+  df
+}
+
+# Creates dataframe for each type of issue using our function. 
+
+economic.df <- party_cor(economic.names, "Economic_Issues", economic.var)
+pander(economic.df)
+
+civ.rights.df <- party_cor(civil.rights.names, "Civil_Rights_Issues", civil.rights.var)
+pander(civ.rights.df)
+
+moral.df <- party_cor(moral.names, "Moral_Issues", moral.var)
+pander(moral.df)
+
+# (Important to keep in mind that urban unrest is top of the charts in this survey because this
+# was during the BLM protests--but nowadays guns and abortion are likely to be top contention.)
+security.df <- party_cor(security.names, "Security_Issues", security.var)
+pander(security.df)
+
+nonpartisan.df <- party_cor(nonpartisan.names, "Nonpartisan_Issues", nonpartisan.var)
+pander(nonpartisan.df)
+```
+
+```{r, warning = F}
+
+# Adds together all names, variables, and sources into holistic vectors
+
+all.names <- c(economic.names, civil.rights.names, moral.names, security.names, nonpartisan.names) 
+
+all.var <- c(economic.var, civil.rights.var, moral.var, security.var, nonpartisan.var)
+
+all.source <- c(economic.source, civil.rights.source, moral.source, security.source, 
+                nonpartisan.source)
+
+# Removes -9 and -8 from the party ID variable (these are unsure or refused).
+anes1 <- anes[! anes$partyid %in% c(-9, -8), ]
+
+# Creates new function to make a dataframe with all of the metrics we care about for 
+# all of these issues.
+all_party_cor <- function(x, y, z){
+  
+  df <- as.data.frame(matrix(NA, length(x), 8))
+  for(i in 1:nrow(df)){
+    variable <- x[i]
+    anes1[, variable][anes1[, variable] < 1 | anes1[, variable] == 99] <- NA
+    variance <- wtd.var(anes1[, variable], weight = anes1$v200010a)[1] 
+    cor <- abs(wtd.cor(anes1[, variable], anes1$partyid, weight = anes1$v200010a))
+    point.scale <- max(anes1[, variable], na.rm = T)
+    original.var <- y[i]
+    source <- z[i]
+    
+    if(variable %in% economic.names){
+      type <- "Economic"}
+    if(variable %in% civil.rights.names){
+      type <- "Civil Rights"}
+    if(variable %in% moral.names){
+      type <- "Moral"}
+    if(variable %in% security.names){
+      type <- "Security"}
+    if(variable %in% nonpartisan.names){
+      type <- "Nonpartisan"}
+    
+    df[i, 1] <- variable
+    df[i, 2] <- original.var
+    df[i, 3] <- cor
+    df[i, 4] <- variance / point.scale
+    df[i, 5] <- variance
+    df[i, 6] <- point.scale
+    df[i, 7] <- type
+    df[i, 8] <- source
+  }
+  df <- df[order(df[, 3], decreasing = T), ]
+  rownames(df) <- NULL
+  colnames(df) <- c("Issue", "ANES_Variable","Cor_to_Party_ID", "Normalized_Variance", 
+                    "Variance", "Point_Scale", "Type", "Source")
+  df
+}
+
+all.df <- all_party_cor(all.names, all.var, all.source)
+```
+
+
+```{r}
+
+# Stores the mean correlation and variance as new objects to use for ab-lines in our graph.
+mean.cor <- mean(all.df$Cor_to_Party_ID)
+mean.var <- mean(all.df$Normalized_Variance)
+
+# Plots these issues along correlation and normalized variance.
+cor_var_mat <- ggplot(all.df, aes(Cor_to_Party_ID, Normalized_Variance, label = Issue)) +
+  geom_vline(xintercept = mean.cor, color = "black", size = 0.5) +
+  geom_hline(yintercept = mean.var, color = "black", size = 0.5) +
+  geom_point(aes(color = Type)) +
+  geom_text_repel(aes(color = Type), max.overlaps = 11, size = 1.7) +
+  scale_x_continuous(breaks = seq(0, 1, by = 0.1)) +
+  scale_y_continuous(breaks = seq(0, 1, by = 0.1)) +
+  scale_color_manual(values = c("black", "darkgreen", "red", "purple", "blue")) +
+  theme_gdocs(base_size = 7) +
+  labs(title = "ANES 2020 Issue Correlation and Variance") +
+  xlab("Correlation Between Issue Response and Party ID") +
+  ylab("Normalized Variance") +
+  annotate("text", x = 0.035, y = .36, label = "Mean Variance", size = 2.5, fontface = 2) +
+  annotate("text", x = .432, y = .07, label = "Mean Correlation", size = 2.5, fontface = 2)
+
+# Saves it as png
+ggsave("cor_var_mat.png")
+
+# Outputs graph
+cor_var_mat
+  
+```
+
+```{r}
+# Turns periods into underscores
+all.df$Issue <- gsub(".", "_", all.df$Issue, fixed = T)
+
+# Adds new variable with a URL that we can point to on github
+all.df$URL <- paste0("https://raw.githubusercontent.com/Watts-Lab/deliberation-topics/main/topics/anes2020/", all.df$Issue)
+all.df$URL <- paste0(all.df$URL, ".md")
+
+# Turns dataframe into csv
+write.csv(all.df,"C:\\Users\\isaacgateno\\Downloads\\ANES_Issues_2020.csv", row.names = FALSE)
+```
+
