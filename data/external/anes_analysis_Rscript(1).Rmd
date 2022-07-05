@@ -124,7 +124,7 @@ anes <- anes %>%
 security.var <- c("v201249", "v201429", "v201432x", "v201311x", "v202310", "v202232", 
                   "v202236x", "v202239x", "v202242x", "v202248x", "v202344x", "v202341x",
                   "v202351", "v202332")
-security.names <- c("defense.spending", "urban.unrest", "protestors.actions", 
+security.names <- c("defense.spending", "urban.unrest", "protesters.actions", 
                     "fs.crime", "science.for.covid", "immigration.levels",
                     "taking.refugees", "immigration.crime", "path.to.citizenship",
                     "seperating.children", "ban.assault.rifles", "gun.background.checks",
@@ -134,7 +134,7 @@ security.source <- c("paper", "paper", "new", "paper", "new", "new", "new", "new
 anes <- anes %>%
   rename("defense.spending" = "v201249",
          "urban.unrest" = "v201429",
-         "protestors.actions" = "v201432x",
+         "protesters.actions" = "v201432x",
          "fs.crime" = "v201311x",
          "science.for.covid" = "v202310",
          "immigration.levels" = "v202232",
@@ -225,15 +225,20 @@ all.source <- c(economic.source, civil.rights.source, moral.source, security.sou
 # Removes -9 and -8 from the party ID variable (these are unsure or refused).
 anes1 <- anes[! anes$partyid %in% c(-9, -8), ]
 
+
 # Creates new function to make a dataframe with all of the metrics we care about for 
 # all of these issues.
 all_party_cor <- function(x, y, z){
   
-  df <- as.data.frame(matrix(NA, length(x), 8))
+  df <- as.data.frame(matrix(NA, length(x), 7))
   for(i in 1:nrow(df)){
     variable <- x[i]
     anes1[, variable][anes1[, variable] < 1 | anes1[, variable] == 99] <- NA
-    variance <- wtd.var(anes1[, variable], weight = anes1$v200010a)[1] 
+  
+    anes1$normalize.val <- (anes1[, variable] - 1) / (max(anes1[, variable], na.rm = T) - 1)
+    
+    variance <- wtd.var(anes1$normalize.val, weight = anes1$v200010a)[1] 
+    
     cor <- abs(wtd.cor(anes1[, variable], anes1$partyid, weight = anes1$v200010a))
     point.scale <- max(anes1[, variable], na.rm = T)
     original.var <- y[i]
@@ -253,16 +258,15 @@ all_party_cor <- function(x, y, z){
     df[i, 1] <- variable
     df[i, 2] <- original.var
     df[i, 3] <- cor
-    df[i, 4] <- variance / point.scale
-    df[i, 5] <- variance
-    df[i, 6] <- point.scale
-    df[i, 7] <- type
-    df[i, 8] <- source
+    df[i, 4] <- variance
+    df[i, 5] <- point.scale
+    df[i, 6] <- type
+    df[i, 7] <- source
   }
   df <- df[order(df[, 3], decreasing = T), ]
   rownames(df) <- NULL
   colnames(df) <- c("Issue", "ANES_Variable","Cor_to_Party_ID", "Normalized_Variance", 
-                    "Variance", "Point_Scale", "Type", "Source")
+                    "Point_Scale", "Type", "Source")
   df
 }
 
@@ -281,23 +285,23 @@ cor_var_mat <- ggplot(all.df, aes(Cor_to_Party_ID, Normalized_Variance, label = 
   geom_vline(xintercept = mean.cor, color = "black", size = 0.5) +
   geom_hline(yintercept = mean.var, color = "black", size = 0.5) +
   geom_point(aes(color = Type)) +
-  geom_text_repel(aes(color = Type), max.overlaps = 11, size = 1.7) +
+  geom_text_repel(aes(color = Type), max.overlaps = 5, size = 2.5) +
   scale_x_continuous(breaks = seq(0, 1, by = 0.1)) +
-  scale_y_continuous(breaks = seq(0, 1, by = 0.1)) +
+  scale_y_continuous(breaks = seq(0, 2, by = 0.05), expand = c(0, 0), limits = c(0, .2)) +
   scale_color_manual(values = c("black", "darkgreen", "red", "purple", "blue")) +
   theme_gdocs(base_size = 7) +
   labs(title = "ANES 2020 Issue Correlation and Variance") +
   xlab("Correlation Between Issue Response and Party ID") +
   ylab("Normalized Variance") +
-  annotate("text", x = 0.035, y = .36, label = "Mean Variance", size = 2.5, fontface = 2) +
-  annotate("text", x = .432, y = .07, label = "Mean Correlation", size = 2.5, fontface = 2)
+  theme(aspect.ratio = 1/1.7) + 
+  annotate("text", x = 0.117, y = .104, label = "Mean Variance", size = 2.5, fontface = 2) +
+  annotate("text", x = .429, y = .015, label = "Mean Correlation", size = 2.5, fontface = 2)
 
 # Saves it as png
 ggsave("cor_var_mat.png")
 
 # Outputs graph
 cor_var_mat
-  
 ```
 
 ```{r}
@@ -311,4 +315,61 @@ all.df$URL <- paste0(all.df$URL, ".md")
 # Turns dataframe into csv
 write.csv(all.df,"C:\\Users\\isaacgateno\\Downloads\\ANES_Issues_2020.csv", row.names = FALSE)
 ```
+
+```{r}
+
+nums <- wtd.table(anes$ban.assault.rifles, weight = anes$v200010a)$x[5:11]
+vals <- as.factor(c("Favor a great deal", "Favor a moderate amount", "Favor a little", 
+                    "Neither favor nor oppose", "Oppose a little", "Oppose a moderate amount", 
+                    "Oppose a great deal"))
+vals <- factor(vals, levels = c("Favor a great deal", "Favor a moderate amount", "Favor a little", 
+                    "Neither favor nor oppose", "Oppose a little", "Oppose a moderate amount", 
+                    "Oppose a great deal"))
+
+wtd.freq <- wtd.table(anes$ban.assault.rifles, weight = anes$v200010a)$sum.of.weights[5:11]
+
+ban.ars.df <- cbind.data.frame(nums, vals, wtd.freq)
+
+ban.ars.hist <- ggplot(ban.ars.df, aes(x = nums, y = wtd.freq, fill = vals)) +
+                geom_bar(stat = "identity") +
+                scale_y_continuous(breaks = seq(0, 3000, 500), 
+                     expand = c(0, 0), limits = c(0, 3100)) +
+                scale_fill_brewer(palette = "RdYlGn", name = "Responses", direction = -1) +
+                labs(title = "Favor or Oppose Banning Assault-Style Rifles",
+                     subtitle = "ANES 2020 Data (Weighted)",
+                y = "Number of Respondents",
+                x = "Stance") +
+                theme_hc() +
+                theme(axis.text.x = element_blank(),
+                      axis.ticks.x = element_blank(),
+                      legend.position = "right")
+
+
+
+vals1 <- as.factor(c("Much better", "Somewhat better", "Slightly better", "Makes no difference",
+                     "Slightly worse", "Somewhat worse", "Much worse"))
+vals1 <- factor(vals1, levels = c("Much better", "Somewhat better", "Slightly better", 
+                                 "Makes no difference", "Slightly worse", "Somewhat worse", 
+                                 "Much worse"))
+wtd.freq1 <- wtd.table(anes$men.work.women.home, weight = anes$v200010a)$sum.of.weights[5:11]
+
+men.work.df <- cbind.data.frame(nums, vals1, wtd.freq1)
+
+men.work.hist <- ggplot(men.work.df, aes(x = nums, y = wtd.freq1, fill = vals1)) +
+                geom_bar(stat = "identity") +
+                scale_y_continuous(breaks = seq(0, 5000, 500), 
+                     expand = c(0, 0), limits = c(0, 5000)) +
+                scale_fill_brewer(palette = "RdYlGn", name = "Responses", direction = -1) +
+                labs(title = "Better or Worse if a Man Works and a Woman Takes Care of Home",
+                     subtitle = "ANES 2020 Data (Weighted)",
+                y = "Number of Respondents",
+                x = "Stance") +
+                theme_hc() +
+                theme(axis.text.x = element_blank(),
+                      axis.ticks.x = element_blank(),
+                      legend.position = "right")
+
+                       
+```
+
 
