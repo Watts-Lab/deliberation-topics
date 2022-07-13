@@ -1,7 +1,7 @@
 # Banning assault-style rifles
 
 ## Prompt
-Do you favor or oppose banning the sale of semi-automatic “assault-style” rifles a great deal, a moderate amount, or a little?
+Do you favor, oppose, or neither favor nor oppose banning the sale of semi-automatic “assault-style” rifles?
 
 ## Responses
 - Favor a great deal
