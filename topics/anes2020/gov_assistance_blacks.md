@@ -11,3 +11,12 @@ And, of course, some other people have opinions somewhere in
 between, at points 2, 3, 4, 5, or 6.
 - Where would you place yourself on this scale, or haven’t you
 thought much about this?
+
+## Responses
+- 1 (Government should help blacks)
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7 (Blacks should help themselves)
