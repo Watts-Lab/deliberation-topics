@@ -1,4 +1,11 @@
 # Federal spending on public schools
 
 ## Prompt
-What about public schools? Should federal spending on public schools be increased, decreased, or kept the same? Should it be [increased / decreased] a lot or a little?
+Should federal spending on public schools be increased, decreased, or kept the same?
+
+## Responses
+- Increased a lot
+- Increased a little
+- Kept the same
+- Decreased a little
+- Decreasaed a lot
