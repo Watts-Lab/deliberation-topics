@@ -3,6 +3,7 @@
 ## Prompt
 Which comes closest to your view?
 
+## Responses
 - Gay and lesbian couples should be allowed to legally marry
 - Gay and lesbian couples should be allowed to form civil
 unions but not legally marry

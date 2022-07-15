@@ -1,4 +1,10 @@
 # Death penalty
 
 ## Prompt
-Do you favor or oppose the death penalty for persons convicted of murder? Do you [favor / oppose] the death penalty for persons convicted of murder strongly or not strongly?
+Do you favor or oppose the death penalty for persons convicted of murder?
+
+## Responses
+- Favor strongly
+- Favor not strongly
+- Oppose not strongly
+- Oppose strongly

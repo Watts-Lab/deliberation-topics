@@ -9,5 +9,13 @@ help blacks because they should help themselves. Suppose these
 people are at the other end, at point 7.
 And, of course, some other people have opinions somewhere in
 between, at points 2, 3, 4, 5, or 6.
-- Where would you place yourself on this scale, or haven’t you
-thought much about this?
+- Where would you place yourself on this scale?
+
+## Responses
+- 1 (Government should help blacks)
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7 (Blacks should help themselves)
