@@ -1,13 +1,15 @@
-# Better off if we worried less about equality
+---
+author: @isaacgat
+modified: Oct 19, 2022 (@JamesPHoughton)
+---
 
-## Prompt
-"This country would be better off if we worried less about how
-equal people are."
-- Do you agree strongly, agree somewhat, neither agree nor
-disagree, disagree somewhat, or disagree strongly with this
-statement?
+Please rate your level of agreement with the following statement:
 
-## Responses
+_"This country would be better off if we worried less about how
+equal people are."_
+
+---
+
 - Agree strongly
 - Agree somewhat
 - Neither agree nor disagree
