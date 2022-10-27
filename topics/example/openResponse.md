@@ -1,4 +1,6 @@
 ---
+name: example/openResponse.md
+type: openResponse
 author: @JamesPHoughton
 modified: Oct 19, 2022
 ---

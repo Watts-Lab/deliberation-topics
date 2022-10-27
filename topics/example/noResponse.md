@@ -1,4 +1,6 @@
 ---
+name: example/noResponse.md
+type: noResponse
 author: @JamesPHoughton
 modified: Oct 19, 2022
 ---

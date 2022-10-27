@@ -1,4 +1,6 @@
 ---
+name: example/multipleChoice.md
+type: multipleChoice
 author: @JamesPHoughton
 modified: Oct 19, 2022
 ---
