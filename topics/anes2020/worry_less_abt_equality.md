@@ -1,4 +1,6 @@
 ---
+name: anes2020/worry_less_abt_equality.md
+type: multipleChoice
 author: @isaacgat
 modified: Oct 19, 2022 (@JamesPHoughton)
 ---
