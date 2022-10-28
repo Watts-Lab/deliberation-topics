@@ -1,6 +1,8 @@
 ---
-author: @JamesPHoughton
-modified: Oct, 19 2022
+name: weinstein_listening/topic_rejection.md
+type: noResponse
+author: @TiaMoin
+modified: Oct 2022
 ---
 
 **"When you engage with your conversation partner, please attempt to apply the learning from the
