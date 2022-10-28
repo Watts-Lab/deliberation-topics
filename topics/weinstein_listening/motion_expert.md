@@ -1,5 +1,5 @@
 ---
-name: weinstein_listening/speak_listening_expert.md
+name: weinstein_listening/motion_expert.md
 type: multipleChoice
 author: @TiaMoin
 modified: Oct 2022
@@ -9,6 +9,6 @@ modified: Oct 2022
 
 ---
 
-- Rely on the fact that sound waves trigger receptors in our brain.
-- Step into the speaker's world and perspective.
+- Rely on the fact that sound waves trigger receptors in our brains.
+- Listen out for the key headlines by checking in every 15 seconds.
 - Think about how you can respond with supportive comments.

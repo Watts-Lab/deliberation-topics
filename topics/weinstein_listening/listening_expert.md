@@ -1,5 +1,5 @@
 ---
-name: weinstein_listening/listen_listening_expert.md
+name: weinstein_listening/listening_expert.md
 type: multipleChoice
 author: @TiaMoin
 modified: Oct 2022

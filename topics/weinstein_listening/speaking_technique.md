@@ -1,5 +1,5 @@
 ---
-name: weinstein_listening/mean_what_we_say.md
+name: weinstein_listening/speaking_technique.md
 type: multipleChoice
 author: @TiaMoin
 modified: Oct 2022
