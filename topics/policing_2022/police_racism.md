@@ -12,7 +12,9 @@ Do you agree or disagree with the following statement:
 ---
 
 - Strongly agree
+- Agree
 - Somewhat agree
 - Neither agree nor disagree
 - Somewhat disagree
+- Disagree
 - Strongly disagree

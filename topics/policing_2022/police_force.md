@@ -10,7 +10,9 @@ modified: Nov 14, 2022
 ---
 
 - Strongly agree
+- Agree
 - Somewhat agree
 - Neither agree nor disagree
 - Somewhat disagree
+- Disagree
 - Strongly disagree

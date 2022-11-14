@@ -10,7 +10,9 @@ modified: Nov 14, 2022
 ---
 
 - ...increased a lot
+- ...increased somewhat
 - ...increased a little
 - ...kept about the same
 - ...decreased a little
+- ...decreased somewhat
 - ...decreased a lot
