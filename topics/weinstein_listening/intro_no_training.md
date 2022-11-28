@@ -1,5 +1,5 @@
 ---
-name: weinstein_listening/intro_videos.md
+name: weinstein_listening/intro_no_training.md
 type: noResponse
 author: @TiaMoin
 modified: Oct 2022

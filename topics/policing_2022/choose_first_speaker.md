@@ -1,5 +1,5 @@
 ---
-name: policing_2020/first_speaker_views.md
+name: policing_2020/choose_first_speaker.md
 type: noResponse
 author: @willschulz @JamesPHoughton
 modified: Nov 14, 2022

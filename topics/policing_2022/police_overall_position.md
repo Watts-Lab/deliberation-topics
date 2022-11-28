@@ -1,5 +1,5 @@
 ---
-name: policing_2020/police_force.md
+name: policing_2020/police_overall_position.md
 type: multipleChoice
 author: @willschulz @JamesPHoughton
 modified: Nov 14, 2022
