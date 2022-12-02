@@ -10,10 +10,10 @@ notes: "Final Boss" question
 
 ---
 
-- Extremely on the side of "de-fund the police"
-- Solidly on the side of "de-fund the police"
+- Completely on the side of "de-fund the police"
+- Mostly on the side of "de-fund the police"
 - Slightly on the side of "de-fund the police"
 - In the middle
 - Slightly on the side of "crack down on crime"
-- Solidly on the side of "crack down on crime"
-- Extremely on the side of "crack down on crime"
+- Mostly on the side of "crack down on crime"
+- Completely on the side of "crack down on crime"
