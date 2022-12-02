@@ -5,7 +5,7 @@ author: @willschulz @JamesPHoughton
 modified: Nov 30, 2022
 ---
 
-# New Discussion Question: Police Use of Force
+# Discussion Question #3: Police Use of Force
 ### Please answer the question below and then discuss your views on it as a group until the 3-minute timer is up.
 
 ---
