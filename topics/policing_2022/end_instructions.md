@@ -9,7 +9,7 @@ modified: Nov 30, 2022
 
 ### Your discussion is now over, thank you for participating!
 
-You can say goodbye to each other and click the “Leave” button whenever you are ready to exit the discussion.
+You can say goodbye to each other before the timer runs out and the discussion automatically ends.
 After the discussion we will ask you to answer some survey questions.
 
 ---

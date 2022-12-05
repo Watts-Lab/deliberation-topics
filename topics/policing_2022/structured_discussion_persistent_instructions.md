@@ -9,8 +9,10 @@ modified: Nov 30, 2022
 
 ### Now we're in the question-structured phase of the discussion
 
-In this stage you discuss specific topics, guided by a series of multiple-choice questions.  The questions are meant to structure the discussion: when you get a question, first answer it privately, and then discuss your views about it as a group.
+In this stage you discuss specific topics, guided by a series of multiple-choice questions.  The first question will appear in 30 seconds.
 
-When you see a new question, please stop talking and select your answer to the question (your answers are private).  After answering the question, the group should discuss their views on the topic of the question, until you receive the next question.
+When you get a question, first answer it (your answers are private), and then discuss your views about it as a group.
+
+After answering the question, everyone their views on the topic of the question until you receive the next question.
 
 ---

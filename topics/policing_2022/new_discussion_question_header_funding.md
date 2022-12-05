@@ -5,7 +5,7 @@ author: @willschulz @JamesPHoughton
 modified: Nov 30, 2022
 ---
 
-# New Discussion Question: Police Funding
+# Discussion Question #1: Police Funding
 ### Please answer the question below and then discuss your views on it as a group until the 3-minute timer is up.
 
 ---
