@@ -2,17 +2,20 @@
 name: example/multipleChoiceWizards.md
 type: multipleChoice
 author: @JamesPHoughton
-modified: Nov 28, 2022
+modified: Jan 6, 2023
+notes: supports testing
 ---
 
-# Who is your favorite wizard?
+# Which of the following wizards appears in the most novels?
 
 ---
 
 - Ponder Stibbons
-- Gandalf
 - Albus Dumbledore
-- Merlin
+- Harry Dresden
 - Eskarina Smith
-- Thomas Edison
 - Ged/Sparrowhawk
+- Gandalf
+- Dr. Strange
+- Merlin
+- Thomas Edison

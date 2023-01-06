@@ -2,15 +2,16 @@
 name: example/multipleChoiceColors.md
 type: multipleChoice
 author: @JamesPHoughton
-modified: Nov 28, 2022
+modified: Jan 6, 2023
+notes: supports testing
 ---
 
-# What is your favorite color?
+# Which of the following colors indicates the presence of a strong magical field?
 
 ---
 
-- Red
-- Blue
-- Green
-- Orange
-- Yellow
+- Octarine
+- Hooloovoo
+- Ultrablack
+- Ulfire
+- Plaid
