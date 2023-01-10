@@ -7,6 +7,6 @@ modified: Nov 30, 2022
 
 # Leader's Time
 
-The <span style = "color:blue">**group leader**</span> should be stating their views on the discussion topic now.
+The **group leader** should be stating their views on the discussion topic now.
 
 ---
