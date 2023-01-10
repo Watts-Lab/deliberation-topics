@@ -5,7 +5,7 @@ author: @willschulz @JamesPHoughton
 modified: Nov 30, 2022
 ---
 
-# 📢 📣 : Leader, You Have The Floor
+# 📣 Leader, You Have The Floor
 
 You should be speaking right now.
 
