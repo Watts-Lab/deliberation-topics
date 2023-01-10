@@ -5,7 +5,7 @@ author: @willschulz @JamesPHoughton
 modified: Nov 30, 2022
 ---
 
-# :x: Please Do Not Talk
+# 🛑 Please Do Not Talk
 
 Only the Group Leader should be speaking right now.
 
