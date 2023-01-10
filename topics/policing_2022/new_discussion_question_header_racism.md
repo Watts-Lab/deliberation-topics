@@ -7,6 +7,16 @@ modified: Nov 30, 2022
 
 # Discussion Question #2: Racism and Policing
 
-### Please answer the question below and then spend 3 minutes discussing your views on it as a group.
+Do you agree or disagree with the following statement?  Please state your view and discuss.
+
+### Racism is a problem in policing.
+
+- Strongly agree
+- Agree
+- Somewhat agree
+- Neither agree nor disagree
+- Somewhat disagree
+- Disagree
+- Strongly disagree
 
 ---
