@@ -5,14 +5,10 @@ author: @willschulz @JamesPHoughton
 modified: Nov 30, 2022
 ---
 
-# Question-Structured Discussion
+# Discussion Instructions
 
-### Now we're in the question-structured phase of the discussion
+In this discussion session you'll discuss 3 specific topics in turn.  The first topic will appear in 30 seconds.
 
-In this stage you discuss specific topics, guided by a series of multiple-choice questions.  The first question will appear in 30 seconds.
-
-When you get a question, first answer it (your answers are private), and then discuss your views about it as a group.
-
-After answering the question, everyone their views on the topic of the question until you receive the next question.
+You will spend 3 minutes on each topic.  When a topic appears, the group leader should describe their views on the topic for 30 seconds, and then the group should discuss freely for the remaining time.  After a total of 3 minutes, a new topic will appear, and you'll repeat this process.
 
 ---
