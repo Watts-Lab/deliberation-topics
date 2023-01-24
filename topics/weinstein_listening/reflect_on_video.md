@@ -1,7 +1,7 @@
 ---
 name: weinstein_listening/reflect_on_video.md
 type: openResponse
-author: @TiaMoin
+author: Tia Moin
 modified: Oct 2022
 ---
 

@@ -1,8 +1,8 @@
 ---
 name: anes2020/worry_less_abt_equality.md
 type: multipleChoice
-author: @isaacgat
-modified: Oct 19, 2022 (@JamesPHoughton)
+author: Isaac Gateno
+modified: Oct 19, 2022 (James Houghton)
 ---
 
 Please rate your level of agreement with the following statement:

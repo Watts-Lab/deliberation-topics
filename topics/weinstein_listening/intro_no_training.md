@@ -1,7 +1,7 @@
 ---
 name: weinstein_listening/intro_no_training.md
 type: noResponse
-author: @TiaMoin
+author: Tia Moin
 modified: Oct 2022
 ---
 

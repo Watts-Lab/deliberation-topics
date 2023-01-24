@@ -1,7 +1,7 @@
 ---
 name: policing_2020/police_racism.md
 type: multipleChoice
-author: @willschulz @JamesPHoughton
+author: Will Schulz, James Houghton
 modified: Nov 14, 2022
 ---
 
