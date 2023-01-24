@@ -5,8 +5,8 @@ author: Will Schulz, James Houghton
 modified: Nov 29, 2022
 ---
 
-# Leader
+# 📣 You are the Leader
 
-You are assigned to be the group's leader.
+You are assigned to be the group's leader. You will share your opinions on each topic first.
 
 ---

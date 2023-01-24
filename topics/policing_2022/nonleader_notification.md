@@ -5,7 +5,7 @@ author: Will Schulz, James Houghton
 modified: Nov 29, 2022
 ---
 
-# Not leader
+# 🛑 You are not the group leader
 
 Someone else in your group has been assigned to be this group's leader.
 

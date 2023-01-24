@@ -3,7 +3,7 @@ name: policing_2020/police_overall_position.md
 type: multipleChoice
 author: Will Schulz, James Houghton
 modified: Nov 14, 2022
-notes: "Final Boss" question
+notes: Final Boss question
 ---
 
 ### What is your position on policing?
