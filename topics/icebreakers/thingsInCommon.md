@@ -1,7 +1,7 @@
 ---
 name: example/noResponse.md
 type: noResponse
-author: @JamesPHoughton
+author: James Houghton
 modified: October 19, 2022
 ---
 

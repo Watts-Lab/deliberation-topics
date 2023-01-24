@@ -1,7 +1,7 @@
 ---
 name: policing_2020/persistent_instructions.md
 type: noResponse
-author: @willschulz @JamesPHoughton
+author: Will Schulz, James Houghton
 modified: Nov 29, 2022
 ---
 

@@ -4,12 +4,10 @@ Topics are defined with the following syntax:
 
 ```markdown
 ---
-
 name: example/multipleChoice.md
 type: multipleChoice
-author: @JamesPHoughton
+author: James Houghton
 modified: Oct 19, 2022
-
 ---
 
 # Markdown or HTML?

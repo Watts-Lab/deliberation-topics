@@ -1,7 +1,7 @@
 ---
 name: policing_2020/first_speaker_time_footer.md
 type: noResponse
-author: @willschulz @JamesPHoughton
+author: Will Schulz, James Houghton
 modified: Nov 30, 2022
 ---
 

@@ -1,8 +1,9 @@
 ---
 name: weinstein_listening/intro_videos.md
 type: noResponse
-author: @TiaMoin
+author: Tia Moin
 modified: Oct 2022
+description: This is to be used with participants who receive a training video
 ---
 
 In this study, we're testing a video training for the first time.

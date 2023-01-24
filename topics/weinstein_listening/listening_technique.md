@@ -1,7 +1,7 @@
 ---
 name: weinstein_listening/listening_technique.md
 type: multipleChoice
-author: @TiaMoin
+author: Tia Moin
 modified: Oct 2022
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: example/multipleChoiceColors.md
 type: multipleChoice
-author: @JamesPHoughton
+author: James Houghton
 modified: Jan 6, 2023
 notes: supports testing
 ---

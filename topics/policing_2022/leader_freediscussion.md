@@ -1,7 +1,7 @@
 ---
 name: policing_2022/leader_nofloor.md
 type: noResponse
-author: @willschulz @JamesPHoughton
+author: Will Schulz, James Houghton
 modified: Nov 30, 2022
 ---
 

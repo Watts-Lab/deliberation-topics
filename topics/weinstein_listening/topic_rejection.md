@@ -1,7 +1,7 @@
 ---
 name: weinstein_listening/topic_rejection.md
 type: noResponse
-author: @TiaMoin
+author: Tia Moin
 modified: Oct 2022
 ---
 
