@@ -7,6 +7,6 @@ modified: Nov 30, 2022
 
 # 🛑 Please Do Not Talk
 
-Only the Group Leader should be speaking right now.
+Only the Group Leader should be speaking right now, until this progress bar finishes:
 
 ---

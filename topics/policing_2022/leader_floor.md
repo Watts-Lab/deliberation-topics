@@ -7,6 +7,6 @@ modified: Nov 30, 2022
 
 # 📣 Leader, You Have The Floor
 
-You should be speaking right now, and everyone else should stay silent.
+You should be speaking right now, and everyone else should stay silent, until this progress bar finishes:
 
 ---

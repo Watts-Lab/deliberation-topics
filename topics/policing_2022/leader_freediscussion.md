@@ -7,6 +7,6 @@ modified: Nov 30, 2022
 
 # 👤👤👤 Group Discussion
 
-The whole group should be discussing the topic now.
+The whole group should be discussing the topic now, until this progress bar finishes:
 
 ---
