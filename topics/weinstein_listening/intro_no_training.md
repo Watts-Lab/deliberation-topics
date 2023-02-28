@@ -10,7 +10,7 @@ We want to learn more about your experience using this interface.
 
 #### Steps:
 
-1. Write a short reflection on a prompt we will give you.
+1. Answer survey questions.
 2. Discuss the prompt with a partner.
 3. Answer survey questions.
 
